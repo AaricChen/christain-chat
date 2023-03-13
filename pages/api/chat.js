@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 export default async function (req, res) {
-  const question = req.question.q;
+  const question = req.query.q;
   if (question) {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
