@@ -9,7 +9,7 @@ export default async function (req, res) {
   if (messages) {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "system", content: "You are a helpful assistant." }, ...{ messages }],
+      messages: [{ role: "system", content: "You are a helpful assistant." }, ...messages],
     });
     console.log(messages);
     console.log(completion.data.choices);
