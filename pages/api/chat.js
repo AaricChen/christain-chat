@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 export default async function (req, res) {
-  const messages = req.body;
+  const messages = req.body.messages;
   console.log(messages);
   if (messages) {
     const completion = await openai.createChatCompletion({
