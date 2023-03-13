@@ -16,7 +16,7 @@ export default async function (req, res) {
     });
     console.log(completion.data.choices);
     if (completion.data.choices) {
-      res.status(200).json({ result: completion.data.choices.find().message.content });
+      res.status(200).json({ result: completion.data.choices[0].message.content });
     } else {
       res.status(200).json({ result: "" });
     }
