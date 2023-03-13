@@ -14,7 +14,12 @@ export default async function (req, res) {
         { role: "user", content: question },
       ],
     });
-    res.status(200).json({ result: completion.data.choices.find().message.content });
+    console.log(completion.data.choices);
+    if (completion.data.choices) {
+      res.status(200).json({ result: completion.data.choices.find().message.content });
+    } else {
+      res.status(200).json({ result: "" });
+    }
   } else {
     res.status(200).json({ result: "" });
   }
