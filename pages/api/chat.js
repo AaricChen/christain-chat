@@ -14,6 +14,6 @@ export default async function (req, res) {
       { role: "user", content: "Where was it played?" },
     ],
   });
-  console.log(completion);
+  console.log(completion.data);
   res.status(200).json({ result: "hello" });
 }
